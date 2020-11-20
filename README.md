@@ -25,7 +25,8 @@
      ```
      These are comma separated values with index and a random number.
      - The generated file should have 10 such entries.
-     - Make sure that the generated file is readable by other users.
+     - *You should be able to extend this script to generate any number of entries, for example 100000 entries.*
+     - Run the script to generate the `inputFile`. Make sure that the generated file is readable by other users.
   4. Run the container again in the background with file from (3) available inside the container (remember the reason you found in (2)).
   5. Get shell access to the container and find the port on which the application is listening. Once done, stop / delete the running container.
   6. Same as (4), run the container and make sure,
@@ -39,10 +40,12 @@ The application should be accessible at http://localhost:9393, it should have th
 > **NOTE**: On play-with-docker.com, you can create files in the terminal and edit them with their online editor.
 
 ### Save the solution
-  - Create a directory named `solution` your clone.
-  - Create a file called `README.md` in the solution with all the commands you executed as part of this exercise.
+  - Create a directory named `solution` in your clone.
+  - Create a file called `README.md` in the `solution` directory with all the commands you executed as part of this section (Part I).
   - Save the `gencsv.sh`, `inputFile` in the same directory as well.
-  - Commit and push the changes to your fork.
+  - Commit and push the changes to your fork on GitHub.
+
+> **NOTE**: One should be able to follow the instructions from the `solution/README.md` file and get csvserver running on their machine.
 
 ## Part II
   0. Delete any containers running from the last part.
@@ -79,4 +82,4 @@ Once you have pushed your progress,
 
 - Make your fork private.
 - Add `anju-infracloud` and `rahul-infracloud` as owners to the repository.
-- Reply to the email with link to your fork.
+- Reply to the email with link to your fork / send an email to `anju [at] infracloud [dot] io`.
