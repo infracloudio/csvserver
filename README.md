@@ -11,9 +11,15 @@
     docker pull infracloudio/csvserver:latest
     docker pull prom/prometheus:v2.22.0
     ```
-  - Fork this repository to your own GitHub acccount and clone it.
+  - Clone this repository to your machine. (**Don't fork it**).
+  - Create a new private repository on GitHub.
+  - `cd` into the `solution` directory, and perform all the steps from that directory.
 
-> **NOTE**: If you have a Windows machine, you can try to do this assignment on [WSL-2](https://docs.docker.com/docker-for-windows/wsl/) or use https://labs.play-with-docker.com 
+> **NOTE**: If you have a Windows machine, you can try to do this assignment on [WSL-2](https://docs.docker.com/docker-for-windows/wsl/) or use https://labs.play-with-docker.com or install GNU/Linux (i.e. Ubuntu) in a virtual machine.
+
+> **NOTE**: Any step from the assignment do **not** require you to modify the container image / build your own container image at all.
+
+> **REMEMBER**: Make sure all the files you create have the exact names as given.
 
 ## Part I
   1. Run the container image `infracloudio/csvserver:latest` in background and check if it's running.
@@ -24,7 +30,7 @@
      1, 98
      ```
      These are comma separated values with index and a random number.
-     - The generated file should have 10 such entries.
+     - Running the script without any arguments, should generate the file `inputFile` with 10 such entries in current directory.
      - *You should be able to extend this script to generate any number of entries, for example 100000 entries.*
      - Run the script to generate the `inputFile`. Make sure that the generated file is readable by other users.
   4. Run the container again in the background with file from (3) available inside the container (remember the reason you found in (2)).
@@ -40,10 +46,20 @@ The application should be accessible at http://localhost:9393, it should have th
 > **NOTE**: On play-with-docker.com, you can create files in the terminal and edit them with their online editor.
 
 ### Save the solution
-  - Create a directory named `solution` in your clone.
   - Create a file called `README.md` in the `solution` directory with all the commands you executed as part of this section (Part I).
-  - Save the `gencsv.sh`, `inputFile` in the same directory as well.
-  - Commit and push the changes to your fork on GitHub.
+  - Write the `docker run` command you executed for (6) in a file named `part-1-cmd`.
+  - Run one of the following commands which will generate a file with name `part-1-output`.
+	```console
+	curl -o ./part-1-output http://localhost:9393/raw
+	# if the above command fails use,
+	wget -O ./part-1-output http://localhost:9393/raw
+	```
+  - Run the following command which will generate a file with name `part-1-logs`.
+	```console
+	docker logs [container_id] >& part-1-logs
+	```
+  - Make sure that the files `gencsv.sh`, `inputFile`, `part-1-cmd`, `part-1-output`, `part-1-logs` are present in the `solution` directory.
+  - Commit and push the changes to your repository on GitHub.
 
 > **NOTE**: One should be able to follow the instructions from the `solution/README.md` file and get csvserver running on their machine.
 
@@ -54,7 +70,7 @@ The application should be accessible at http://localhost:9393, it should have th
 
 ### Save the solution
   - Copy the `docker-compose.yaml` to the `solution` directory.
-  - Commit and push the changes to your fork.
+  - Commit and push the changes to your repository on GitHub.
 
 ## Part III
   0. Delete any containers running from the last part.
@@ -68,7 +84,7 @@ The Prometheus instance should be accessible at http://localhost:9090, and it sh
 ### Save the solution
   - Update the `docker-compose.yaml` from the `solution` directory.
   - Add any other files you may have created to the `solution` directory.
-  - Commit and push the changes to your fork.
+  - Commit and push the changes to your repository on GitHub.
 
 ## Possible errors / caveats on different host OS
   1. SELinux enabled GNU/Linux machine: `open /****/****: permission denied`
@@ -80,6 +96,5 @@ The Prometheus instance should be accessible at http://localhost:9090, and it sh
 ## Submitting the solution
 Once you have pushed your progress,
 
-- Make your fork private.
-- Add `anju-infracloud` and `rahul-infracloud` as owners to the repository.
-- Reply to the email with link to your fork / send an email to `anju [at] infracloud [dot] io`.
+- Add `anju-infracloud` and `rahul-infracloud` as collaborators to the repository.
+- Reply to the email with link to your repository / send an email to `anju [at] infracloud [dot] io`.
