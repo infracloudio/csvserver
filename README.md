@@ -13,6 +13,7 @@
     ```
   - Clone this repository to your machine. (**Don't fork it**).
   - Create a new private repository on GitHub.
+  - Use `bash` shell for all the operations, other shells like ksh, fish etc might cause unknown issues.
   - `cd` into the `solution` directory, and perform all the steps from that directory.
 
 > **NOTE**: If you have a Windows machine, you can try to do this assignment on [WSL-2](https://docs.docker.com/docker-for-windows/wsl/) or use https://labs.play-with-docker.com or install GNU/Linux (i.e. Ubuntu) in a virtual machine.
@@ -39,7 +40,7 @@
      - The application is accessible on the host at http://localhost:9393
      - Set the environment variable `CSVSERVER_BORDER` to have value `Orange`.
 
-The application should be accessible at http://localhost:9393, it should have the 10 entries from `inuptFile` and the welcome note should have an orange color border.
+The application should be accessible at http://localhost:9393, it should have the 10 entries from `inputFile` and the welcome note should have an orange color border.
 
 > **NOTE**: If you are using play-with-docker.com then you will see the number 9393 highlighted at the top. You can access the application by clicking on that instead of using http://localhost:9393
 
