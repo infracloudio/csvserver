@@ -1,6 +1,9 @@
 # The csvserver assignment
 
+The developer team of the csvserver was working hard to get it ready for production. The team decided to go for a trip before the launch, and has been missing since then. You have been given the responsibility to figure out how to get the csvserver running correctly with the help of the following document<sup>[1](#user-content-ftn1)</sup>. You might need to understand why things are failing and try to fix them, and make it ready for a launch.
+
 ## Prerequisites
+You don't need to know Docker or Prometheus beforehand to solve this assignment, take a look at the following docs and understand the basics about these tools.
   - Read Docker orientation and setup: https://docs.docker.com/get-started/
   - Read Docker build and run your image: https://docs.docker.com/get-started/part2/
   - Read Get started with Docker Compose: https://docs.docker.com/compose/gettingstarted/
@@ -12,15 +15,19 @@
     docker pull prom/prometheus:v2.22.0
     ```
   - Clone this repository to your machine. (**Don't fork it**).
-  - Create a new private repository on GitHub.
   - Use `bash` shell for all the operations, other shells like ksh, fish etc might cause unknown issues.
+  - Create a new **private** repository on GitHub.
   - `cd` into the `solution` directory, and perform all the steps from that directory.
 
 > **NOTE**: If you have a Windows machine, you can try to do this assignment on [WSL-2](https://docs.docker.com/docker-for-windows/wsl/) or use https://labs.play-with-docker.com or install GNU/Linux (i.e. Ubuntu) in a virtual machine.
 
-> **NOTE**: Any step from the assignment do **not** require you to modify the container image / build your own container image at all.
-
-> **REMEMBER**: Make sure all the files you create have the exact names as given.
+### Please note
+  - Any step from the assignment does **not** require you to modify the container image, or build your own container image at all.
+  - Make sure all the files you create have the exact same names as given.
+  - Don't commit all of your work as a single commit, commit it as you finish each part, so we can see the work as you built it up.
+  - The solution should work on a different machine, which has `docker` and `docker-compose`, without any modifications.
+  - Reading this document carefully is the key to solve this assignment.
+  - If you need more time or are stuck at some point, don't hesitate to reach out to us.
 
 ## Part I
   1. Run the container image `infracloudio/csvserver:latest` in background and check if it's running.
@@ -29,12 +36,13 @@
      ```csv
      0, 234
      1, 98
+     2, 34
      ```
      These are comma separated values with index and a random number.
      - Running the script without any arguments, should generate the file `inputFile` with 10 such entries in current directory.
      - *You should be able to extend this script to generate any number of entries, for example 100000 entries.*
      - Run the script to generate the `inputFile`. Make sure that the generated file is readable by other users.
-  4. Run the container again in the background with file from (3) available inside the container (remember the reason you found in (2)).
+  4. Run the container again in the background with file generated in (3) available inside the container (remember the reason you found in (2)).
   5. Get shell access to the container and find the port on which the application is listening. Once done, stop / delete the running container.
   6. Same as (4), run the container and make sure,
      - The application is accessible on the host at http://localhost:9393
@@ -99,3 +107,7 @@ Once you have pushed your progress,
 
 - Add `anju-infracloud` and `rahul-infracloud` as collaborators to the repository.
 - Reply to the email with link to your repository / send an email to `anju [at] infracloud [dot] io`.
+
+---
+
+<a name="ftn1">1</a>: This scenario is inspired by the *[Tying This Together: Reverse Engineering a Production Service](https://sre.google/sre-book/accelerating-sre-on-call/#tying-this-together-reverse-engineering-a-production-service-ZKsDiLce)* section of chapter 28 from the Site Reliability Engineering book by Google.
