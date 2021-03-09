@@ -1,6 +1,6 @@
 # The csvserver assignment
 
-The developer team of the csvserver was working hard to get it ready for production. The team decided to go for a trip before the launch, and has been missing since then. You have been given the responsibility to figure out how to get the csvserver running correctly with the help of the following document<sup>[1](#user-content-ftn1)</sup>. You might need to understand why things are failing and try to fix them, and make it ready for a launch.
+The developer team of the csvserver was working hard to get it ready for production. The team decided to go for a trip before the launch, and has been missing since then. You have been given the responsibility to figure out how to get the csvserver running correctly with the help of the following document. You might need to understand why things are failing and try to fix them, and make it ready for a launch<sup>[1](#user-content-ftn1)</sup>.
 
 ## Prerequisites
 You don't need to know Docker or Prometheus beforehand to solve this assignment, take a look at the following docs and understand the basics about these tools.
