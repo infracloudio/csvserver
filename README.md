@@ -12,7 +12,7 @@ You don't need to know Docker or Prometheus beforehand to solve this assignment,
   - Install Docker and docker-compose on your machine and run following commands,
     ```sh
     docker pull infracloudio/csvserver:latest
-    docker pull prom/prometheus:v2.22.0
+    docker pull prom/prometheus:v2.45.2
     ```
   - Clone this repository to your machine. (**Don't fork it**).
   - Use `bash` shell for all the operations, other shells like ksh, fish etc might cause unknown issues.
@@ -82,7 +82,7 @@ The application should be accessible at http://localhost:9393, it should have th
 
 ## Part III
   0. Delete any containers running from the last part.
-  1. Add Prometheus container (`prom/prometheus:v2.22.0`) to the docker-compose.yaml form part II.
+  1. Add Prometheus container (`prom/prometheus:v2.45.2`) to the docker-compose.yaml form part II.
   2. Configure Prometheus to collect data from our application at `<application>:<port>/metrics` endpoint. (Where the `<port>` is the port from I.5)
   3. Make sure that Prometheus is accessible at http://localhost:9090 on the host.
   4. Type `csvserver_records` in the query box of Prometheus. Click on Execute and then switch to the Graph tab.
